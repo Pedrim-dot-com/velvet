@@ -16,9 +16,7 @@ function App() {
 
         {/* Content */}
         <div className="relative z-10 px-6 sm:px-10 max-w-5xl">
-          <p className="text-gold-400 tracking-widest text-xs sm:text-sm mb-4">
-            EXPERIÊNCIA. ORIGEM. EXCELÊNCIA.
-          </p>
+          <p className="text-gold-400 tracking-widest text-xs sm:text-sm mb-4">EXPERIÊNCIA. ORIGEM. EXCELÊNCIA.</p>
 
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6"
@@ -29,8 +27,7 @@ function App() {
           </h1>
 
           <p className="text-text-secondary text-sm sm:text-base max-w-md mb-8">
-            Grãos selecionados, torra artesanal e paixão em cada
-            detalhe.
+            Grãos selecionados, torra artesanal e paixão em cada detalhe.
           </p>
 
           <button

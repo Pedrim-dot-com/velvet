@@ -9,16 +9,20 @@ import tseslint from 'typescript-eslint';
 export default defineConfig([
   globalIgnores(['dist']),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{js,ts,jsx,tsx}'],
+    rules: {
+      'no-unused-vars': 'warn',
+      'react-hooks/rules-of-hooks': 'error'
+    },
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
       reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
-      prettier,
+      prettier
     ],
     languageOptions: {
-      globals: globals.browser,
-    },
-  },
+      globals: globals.browser
+    }
+  }
 ]);
