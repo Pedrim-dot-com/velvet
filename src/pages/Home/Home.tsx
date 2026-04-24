@@ -46,7 +46,7 @@ const Home = () => {
                   transition={{ delay: 0.3 }}
                   className="text-gold-500 tracking-[0.3em] text-xs mb-4"
                 >
-                  EXPERIÊNCIA. ORIGEM. EXCELÊNCIA.
+                  {homeCMS.data.hero.eyebrow}
                 </motion.p>
 
                 <motion.h1
@@ -56,18 +56,8 @@ const Home = () => {
                   className="text-4xl sm:text-5xl lg:text-6xl leading-tight "
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
-                  {homeCMS.data.title}
+                  {homeCMS.data.hero.title}
                 </motion.h1>
-
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.6 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6"
-                  style={{ fontFamily: 'var(--font-heading)' }}
-                >
-                  {homeCMS.data.subtitle}
-                </motion.p>
 
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -75,7 +65,7 @@ const Home = () => {
                   transition={{ delay: 0.6 }}
                   className="text-text-secondary mb-8 max-w-md"
                 >
-                  {homeCMS.data.subtitle}
+                  {homeCMS.data.hero.description}
                 </motion.p>
 
                 <motion.button
@@ -89,7 +79,7 @@ const Home = () => {
                     transition-all duration-300
                   "
                 >
-                  Descobrir coleção →
+                  {homeCMS.data.hero.cta}
                 </motion.button>
               </motion.div>
             </div>
