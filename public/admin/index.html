@@ -14,7 +14,7 @@
         window.location.hash.includes('invite_token') ||
         window.location.hash.includes('recovery_token');
 
-      if (hasToken && !window.location.pathname.startsWith('/admin')) {
+      if (hasToken) {
         window.location.href = '/admin/' + window.location.search + window.location.hash;
       }
     </script>
