@@ -13,5 +13,75 @@ collections:
         label: 'Home Page'
         name: 'home'
         fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Subtitle', name: 'subtitle', widget: 'string' }
+          # HEADER
+          - label: 'Header'
+            name: 'header'
+            widget: 'object'
+            fields:
+              - { label: 'Brand', name: 'brand', widget: 'string' }
+              - label: 'Navigation'
+                name: 'navigation'
+                widget: 'object'
+                fields:
+                  - { label: 'Home', name: 'home', widget: 'string' }
+                  - { label: 'Shop', name: 'shop', widget: 'string' }
+                  - { label: 'About', name: 'about', widget: 'string' }
+
+          # HERO
+          - label: 'Hero'
+            name: 'hero'
+            widget: 'object'
+            fields:
+              - { label: 'Eyebrow', name: 'eyebrow', widget: 'string' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'text' }
+              - { label: 'CTA', name: 'cta', widget: 'string' }
+
+          # FOOTER
+          - label: 'Footer'
+            name: 'footer'
+            widget: 'object'
+            fields:
+              # Brand
+              - label: 'Brand'
+                name: 'brand'
+                widget: 'object'
+                fields:
+                  - { label: 'Name', name: 'name', widget: 'string' }
+                  - { label: 'Description', name: 'description', widget: 'text' }
+
+              # Navigation
+              - label: 'Navigation'
+                name: 'navigation'
+                widget: 'object'
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string' }
+                  - label: 'Links'
+                    name: 'links'
+                    widget: 'object'
+                    fields:
+                      - { label: 'Home', name: 'home', widget: 'string' }
+                      - { label: 'Shop', name: 'shop', widget: 'string' }
+                      - { label: 'About', name: 'about', widget: 'string' }
+
+              # Newsletter
+              - label: 'Newsletter'
+                name: 'newsletter'
+                widget: 'object'
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string' }
+                  - { label: 'Placeholder', name: 'placeholder', widget: 'string' }
+                  - { label: 'CTA', name: 'cta', widget: 'string' }
+
+              # Bottom
+              - label: 'Bottom'
+                name: 'bottom'
+                widget: 'object'
+                fields:
+                  - { label: 'Copyright', name: 'copyright', widget: 'string' }
+                  - label: 'Links'
+                    name: 'links'
+                    widget: 'object'
+                    fields:
+                      - { label: 'Instagram', name: 'instagram', widget: 'string' }
+                      - { label: 'Contact', name: 'contact', widget: 'string' }

@@ -53,11 +53,21 @@ const Home = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6 whitespace-pre-line"
+                  className="text-4xl sm:text-5xl lg:text-6xl leading-tight "
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {homeCMS.data.title}
                 </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                  className="text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6"
+                  style={{ fontFamily: 'var(--font-heading)' }}
+                >
+                  {homeCMS.data.subtitle}
+                </motion.p>
 
                 <motion.p
                   initial={{ opacity: 0 }}
