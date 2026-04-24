@@ -1,10 +1,6 @@
 import { motion } from 'framer-motion';
-import hero from '../../../assets/hero.png';
-import { HomeCMSContent } from '../../../cms/types';
-
-interface HeroProps {
-  content: HomeCMSContent['hero'];
-}
+import hero from '../../assets/hero.png';
+import { HeroProps } from './Hero.types';
 
 const Hero = ({ content }: HeroProps) => {
   return (
@@ -37,7 +33,7 @@ const Hero = ({ content }: HeroProps) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-4xl sm:text-5xl lg:text-6xl leading-tight "
+              className="text-4xl sm:text-5xl lg:text-6xl leading-tight mb-4"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               {content.title}
