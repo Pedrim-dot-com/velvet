@@ -25,10 +25,12 @@ const Home = () => {
     case RequestStatusType.SUCCESS:
       return (
         <section className="relative min-h-[80vh] flex items-center overflow-hidden">
-          <div className="absolute inset-0">
-            <img src={hero} alt="Coffee" className="w-full h-full object-cover opacity-20 scale-105" />
-            <div className="absolute inset-0 bg-linear-to-r from-brown-900 via-brown-900/80 to-transparent" />
-          </div>
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: `url(${hero})`
+            }}
+          />
 
           <div className="relative z-10 w-full">
             <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
@@ -51,7 +53,7 @@ const Home = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6"
+                  className="text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6 whitespace-pre-line"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {homeCMS.data.title}

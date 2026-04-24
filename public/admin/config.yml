@@ -9,7 +9,7 @@ collections:
   - name: 'home'
     label: 'Home'
     files:
-      - file: 'content/home.json'
+      - file: 'public/content/home.json'
         label: 'Home Page'
         name: 'home'
         fields:
