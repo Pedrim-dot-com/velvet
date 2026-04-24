@@ -1,7 +1,6 @@
 import { RequestStatusType, useCMSContent } from '../../cms';
 import { HomeCMSContent } from '../../cms/types';
-import { Footer, Navbar } from '../../components';
-import Hero from './components';
+import { Footer, Hero, Navbar } from '../../components';
 
 const Home = () => {
   const homeCMS = useCMSContent<HomeCMSContent>('home.json');
