@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build && cp -r content dist/content",
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
