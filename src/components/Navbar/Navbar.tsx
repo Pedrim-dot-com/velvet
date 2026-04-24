@@ -1,8 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
+import type { NavbarProps } from './Navbar.types';
 
-const Navbar = () => {
+const Navbar = ({ content }: NavbarProps) => {
   const [open, setOpen] = useState(false);
+  const navLinks = content.navigation;
+  const brand = content.brand;
 
   return (
     <>
@@ -28,14 +31,14 @@ const Navbar = () => {
         >
           {/* LOGO */}
           <h1 className="text-gold-500 tracking-[0.2em] text-sm" style={{ fontFamily: 'var(--font-heading)' }}>
-            VELVET CAFÉS
+            {brand}
           </h1>
 
           {/* DESKTOP MENU */}
           <nav className="hidden md:flex gap-10 text-sm tracking-wide text-text-secondary">
-            <a className="hover:text-white transition cursor-pointer">Home</a>
-            <a className="hover:text-white transition cursor-pointer">Shop</a>
-            <a className="hover:text-white transition cursor-pointer">About</a>
+            <a className="hover:text-white transition cursor-pointer">{navLinks.home}</a>
+            <a className="hover:text-white transition cursor-pointer">{navLinks.shop}</a>
+            <a className="hover:text-white transition cursor-pointer">{navLinks.about}</a>
           </nav>
 
           {/* MOBILE BUTTON */}
@@ -77,9 +80,9 @@ const Navbar = () => {
               "
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              <a onClick={() => setOpen(false)}>Home</a>
-              <a onClick={() => setOpen(false)}>Shop</a>
-              <a onClick={() => setOpen(false)}>About</a>
+              <a onClick={() => setOpen(false)}>{navLinks.home}</a>
+              <a onClick={() => setOpen(false)}>{navLinks.shop}</a>
+              <a onClick={() => setOpen(false)}>{navLinks.about}</a>
             </motion.nav>
           </motion.div>
         )}
