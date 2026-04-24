@@ -2,40 +2,40 @@
   "header": {
     "brand": "VELVET CAFÉS",
     "navigation": {
-      "home": "Home",
-      "shop": "Shop",
-      "about": "About"
+      "home": "Início",
+      "shop": "Loja",
+      "about": "Sobre"
     }
   },
   "hero": {
     "eyebrow": "EXPERIÊNCIA. ORIGEM. EXCELÊNCIA.",
-    "title": "Café é arte. E nós elevamos.",
+    "title": "O café é arte. Nós elevamo-la.",
     "description": "Café premium para verdadeiros apreciadores. Blends exclusivos com carácter e profundidade.",
     "cta": "Descobrir coleção →"
   },
   "footer": {
     "brand": {
       "name": "VELVET CAFÉS",
-      "description": "Café selecionado com torras excepcionais das melhores origens do mundo. Com sede no Porto, mas com curiosidade global."
+      "description": "Café selecionado com torra excecional, proveniente das melhores origens do mundo. Com sede no Porto, com uma visão global."
     },
     "navigation": {
-      "title": "Navigation",
+      "title": "Navegação",
       "links": {
-        "home": "Home",
-        "shop": "Shop",
-        "about": "About"
+        "home": "Início",
+        "shop": "Loja",
+        "about": "Sobre"
       }
     },
     "newsletter": {
       "title": "Newsletter",
-      "placeholder": "Your email",
-      "cta": "JOIN →"
+      "placeholder": "O seu email",
+      "cta": "Subscrever →"
     },
     "bottom": {
-      "copyright": "© 2026 Velvet Cafés. All rights reserved.",
+      "copyright": "© 2026 Velvet Cafés. Todos os direitos reservados.",
       "links": {
         "instagram": "Instagram",
-        "contact": "Contact"
+        "contact": "Contacto"
       }
     }
   }

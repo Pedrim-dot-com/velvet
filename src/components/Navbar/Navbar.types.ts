@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react';
+import { HomeCMSContent } from '../../cms/types';
 
 export interface NavbarProps {
-  children: ReactNode;
+  content: HomeCMSContent['header'];
 }
