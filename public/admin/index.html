@@ -7,8 +7,22 @@
   </head>
 
   <body>
+    <script>
+      const hasToken =
+        window.location.search.includes('invite_token') ||
+        window.location.search.includes('recovery_token') ||
+        window.location.hash.includes('invite_token') ||
+        window.location.hash.includes('recovery_token');
+
+      if (hasToken && !window.location.pathname.startsWith('/admin')) {
+        window.location.href = '/admin/' + window.location.search + window.location.hash;
+      }
+    </script>
+
+    <!-- Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+    <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3.1.11/dist/decap-cms.js"></script>
   </body>
 </html>
