@@ -1,0 +1,36 @@
+{
+  "header": {
+    "brand": "VELVET CAFÉS",
+    "navigation": {
+      "home": "Início",
+      "shop": "Loja",
+      "about": "Sobre"
+    }
+  },
+  "footer": {
+    "brand": {
+      "name": "VELVET CAFÉS",
+      "description": "Café selecionado com torra excecional, proveniente das melhores origens do mundo. Com sede no Porto, com uma visão global."
+    },
+    "navigation": {
+      "title": "Navegação",
+      "links": {
+        "home": "Início",
+        "shop": "Loja",
+        "about": "Sobre"
+      }
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "O seu email",
+      "cta": "Subscrever →"
+    },
+    "bottom": {
+      "copyright": "© 2026 Velvet Cafés. Todos os direitos reservados.",
+      "links": {
+        "instagram": "Instagram",
+        "contact": "Contacto"
+      }
+    }
+  }
+}

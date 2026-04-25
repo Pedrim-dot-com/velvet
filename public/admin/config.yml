@@ -6,14 +6,13 @@ media_folder: 'images'
 public_folder: '/images'
 
 collections:
-  - name: 'home'
-    label: 'Home'
+  - name: 'layout'
+    label: 'Layout'
     files:
-      - file: '/public/content/home.json'
-        label: 'Home Page'
-        name: 'home'
+      - file: 'public/content/layout.json'
+        label: 'Site Layout'
+        name: 'layout'
         fields:
-          # HEADER
           - label: 'Header'
             name: 'header'
             widget: 'object'
@@ -27,30 +26,16 @@ collections:
                   - { label: 'Shop', name: 'shop', widget: 'string' }
                   - { label: 'About', name: 'about', widget: 'string' }
 
-          # HERO
-          - label: 'Hero'
-            name: 'hero'
-            widget: 'object'
-            fields:
-              - { label: 'Eyebrow', name: 'eyebrow', widget: 'string' }
-              - { label: 'Title', name: 'title', widget: 'string' }
-              - { label: 'Description', name: 'description', widget: 'text' }
-              - { label: 'CTA', name: 'cta', widget: 'string' }
-
-          # FOOTER
           - label: 'Footer'
             name: 'footer'
             widget: 'object'
             fields:
-              # Brand
               - label: 'Brand'
                 name: 'brand'
                 widget: 'object'
                 fields:
                   - { label: 'Name', name: 'name', widget: 'string' }
                   - { label: 'Description', name: 'description', widget: 'text' }
-
-              # Navigation
               - label: 'Navigation'
                 name: 'navigation'
                 widget: 'object'
@@ -63,8 +48,6 @@ collections:
                       - { label: 'Home', name: 'home', widget: 'string' }
                       - { label: 'Shop', name: 'shop', widget: 'string' }
                       - { label: 'About', name: 'about', widget: 'string' }
-
-              # Newsletter
               - label: 'Newsletter'
                 name: 'newsletter'
                 widget: 'object'
@@ -72,8 +55,6 @@ collections:
                   - { label: 'Title', name: 'title', widget: 'string' }
                   - { label: 'Placeholder', name: 'placeholder', widget: 'string' }
                   - { label: 'CTA', name: 'cta', widget: 'string' }
-
-              # Bottom
               - label: 'Bottom'
                 name: 'bottom'
                 widget: 'object'
@@ -85,3 +66,63 @@ collections:
                     fields:
                       - { label: 'Instagram', name: 'instagram', widget: 'string' }
                       - { label: 'Contact', name: 'contact', widget: 'string' }
+
+  - name: 'home'
+    label: 'Home'
+    files:
+      - file: 'public/content/home.json'
+        label: 'Home Page'
+        name: 'home'
+        fields:
+          - label: 'Hero'
+            name: 'hero'
+            widget: 'object'
+            fields:
+              - { label: 'Eyebrow', name: 'eyebrow', widget: 'string' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'text' }
+              - { label: 'CTA', name: 'cta', widget: 'string' }
+
+  - name: 'pages'
+    label: 'Pages'
+    folder: 'public/content/pages'
+    create: true
+    extension: 'json'
+    format: 'json'
+    identifier_field: 'slug'
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - label: 'Sections'
+        name: 'sections'
+        widget: 'list'
+        types:
+          - label: 'Rich Text'
+            name: 'richText'
+            widget: 'object'
+            fields:
+              - { label: 'ID', name: 'id', widget: 'string' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Body', name: 'body', widget: 'text' }
+
+          - label: 'Feature List'
+            name: 'featureList'
+            widget: 'object'
+            fields:
+              - { label: 'ID', name: 'id', widget: 'string' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Items'
+                name: 'items'
+                widget: 'list'
+                field: { label: 'Item', name: 'item', widget: 'string' }
+
+          - label: 'CTA'
+            name: 'cta'
+            widget: 'object'
+            fields:
+              - { label: 'ID', name: 'id', widget: 'string' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'text' }
+              - { label: 'CTA Label', name: 'ctaLabel', widget: 'string' }

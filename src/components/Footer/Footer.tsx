@@ -1,9 +1,5 @@
 import { motion } from 'framer-motion';
-import { HomeCMSContent } from '../../cms/types';
-
-interface FooterProps {
-  content: HomeCMSContent['footer'];
-}
+import { FooterProps } from './Footer.types';
 
 const Footer = ({ content }: FooterProps) => {
   const footerContent = content;
