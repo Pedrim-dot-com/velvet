@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import type { NavbarProps } from './Navbar.types';
 
 const Navbar = ({ content }: NavbarProps) => {
@@ -30,15 +31,23 @@ const Navbar = ({ content }: NavbarProps) => {
         "
         >
           {/* LOGO */}
-          <h1 className="text-gold-500 tracking-[0.2em] text-sm" style={{ fontFamily: 'var(--font-heading)' }}>
+          <Link to="/" className="text-gold-500 tracking-[0.2em] text-sm" style={{ fontFamily: 'var(--font-heading)' }}>
             {brand}
-          </h1>
+          </Link>
 
           {/* DESKTOP MENU */}
           <nav className="hidden md:flex gap-10 text-sm tracking-wide text-text-secondary">
-            <a className="hover:text-white transition cursor-pointer">{navLinks.home}</a>
-            <a className="hover:text-white transition cursor-pointer">{navLinks.shop}</a>
-            <a className="hover:text-white transition cursor-pointer">{navLinks.about}</a>
+            {navLinks.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  `transition cursor-pointer ${isActive ? 'text-white' : 'hover:text-white'}`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
           </nav>
 
           {/* MOBILE BUTTON */}
@@ -80,9 +89,11 @@ const Navbar = ({ content }: NavbarProps) => {
               "
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              <a onClick={() => setOpen(false)}>{navLinks.home}</a>
-              <a onClick={() => setOpen(false)}>{navLinks.shop}</a>
-              <a onClick={() => setOpen(false)}>{navLinks.about}</a>
+              {navLinks.map((item) => (
+                <NavLink key={item.path} to={item.path} onClick={() => setOpen(false)}>
+                  {item.label}
+                </NavLink>
+              ))}
             </motion.nav>
           </motion.div>
         )}

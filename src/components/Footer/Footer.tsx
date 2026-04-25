@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { FooterProps } from './Footer.types';
 
 const Footer = ({ content }: FooterProps) => {
@@ -33,14 +34,14 @@ const Footer = ({ content }: FooterProps) => {
           >
             <p className="text-white/60 mb-4 tracking-wide">{footerContent.navigation.title}</p>
 
-            {[
-              footerContent.navigation.links.home,
-              footerContent.navigation.links.shop,
-              footerContent.navigation.links.about
-            ].map((item) => (
-              <a key={item} className="text-text-secondary hover:text-white transition cursor-pointer">
-                {item}
-              </a>
+            {footerContent.navigation.links.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="text-text-secondary hover:text-white transition cursor-pointer"
+              >
+                {item.label}
+              </Link>
             ))}
           </motion.div>
 

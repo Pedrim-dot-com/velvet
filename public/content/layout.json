@@ -1,11 +1,20 @@
 {
   "header": {
     "brand": "VELVET CAFÉS",
-    "navigation": {
-      "home": "Início",
-      "shop": "Loja",
-      "about": "Sobre"
-    }
+    "navigation": [
+      {
+        "label": "Início",
+        "path": "/"
+      },
+      {
+        "label": "Loja",
+        "path": "/shop"
+      },
+      {
+        "label": "Sobre",
+        "path": "/pages/about"
+      }
+    ]
   },
   "footer": {
     "brand": {
@@ -14,11 +23,20 @@
     },
     "navigation": {
       "title": "Navegação",
-      "links": {
-        "home": "Início",
-        "shop": "Loja",
-        "about": "Sobre"
-      }
+      "links": [
+        {
+          "label": "Início",
+          "path": "/"
+        },
+        {
+          "label": "Loja",
+          "path": "/shop"
+        },
+        {
+          "label": "Sobre",
+          "path": "/pages/about"
+        }
+      ]
     },
     "newsletter": {
       "title": "Newsletter",
