@@ -20,11 +20,10 @@ collections:
               - { label: 'Brand', name: 'brand', widget: 'string' }
               - label: 'Navigation'
                 name: 'navigation'
-                widget: 'object'
+                widget: 'list'
                 fields:
-                  - { label: 'Home', name: 'home', widget: 'string' }
-                  - { label: 'Shop', name: 'shop', widget: 'string' }
-                  - { label: 'About', name: 'about', widget: 'string' }
+                  - { label: 'Label', name: 'label', widget: 'string' }
+                  - { label: 'Path', name: 'path', widget: 'string' }
 
           - label: 'Footer'
             name: 'footer'
@@ -43,11 +42,10 @@ collections:
                   - { label: 'Title', name: 'title', widget: 'string' }
                   - label: 'Links'
                     name: 'links'
-                    widget: 'object'
+                    widget: 'list'
                     fields:
-                      - { label: 'Home', name: 'home', widget: 'string' }
-                      - { label: 'Shop', name: 'shop', widget: 'string' }
-                      - { label: 'About', name: 'about', widget: 'string' }
+                      - { label: 'Label', name: 'label', widget: 'string' }
+                      - { label: 'Path', name: 'path', widget: 'string' }
               - label: 'Newsletter'
                 name: 'newsletter'
                 widget: 'object'

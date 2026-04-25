@@ -1,8 +1,7 @@
-export type NavLinks = {
-  home: string;
-  shop: string;
-  about: string;
-};
+export interface NavigationLinkCMS {
+  label: string;
+  path: string;
+}
 
 export type FooterLinks = {
   instagram: string;
@@ -11,7 +10,7 @@ export type FooterLinks = {
 
 export interface HeaderCMSContent {
   brand: string;
-  navigation: NavLinks;
+  navigation: NavigationLinkCMS[];
 }
 
 export interface HeroCMSContent {
@@ -28,7 +27,7 @@ export interface FooterCMSContent {
   };
   navigation: {
     title: string;
-    links: NavLinks;
+    links: NavigationLinkCMS[];
   };
   newsletter: {
     title: string;
