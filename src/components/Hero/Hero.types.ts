@@ -1,5 +1,5 @@
-import { HomeCMSContent } from '../../cms/types';
+import { HeroCMSContent } from '../../cms/types';
 
 export interface HeroProps {
-  content: HomeCMSContent['hero'];
+  content: HeroCMSContent;
 }

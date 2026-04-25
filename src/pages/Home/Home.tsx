@@ -1,6 +1,6 @@
 import { RequestStatusType, useCMSContent } from '../../cms';
 import { HomeCMSContent } from '../../cms/types';
-import { Footer, Hero, Navbar } from '../../components';
+import { Hero } from '../../components';
 
 const Home = () => {
   const homeCMS = useCMSContent<HomeCMSContent>('home.json');
@@ -21,13 +21,7 @@ const Home = () => {
       );
 
     case RequestStatusType.SUCCESS:
-      return (
-        <>
-          <Navbar content={homeCMS.data.header} />
-          <Hero content={homeCMS.data.hero} />
-          <Footer content={homeCMS.data.footer} />
-        </>
-      );
+      return <Hero content={homeCMS.data.hero} />;
 
     case RequestStatusType.IDLE:
     default:

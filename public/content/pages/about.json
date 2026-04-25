@@ -1,0 +1,26 @@
+{
+  "slug": "about",
+  "title": "Sobre a Velvet Cafés",
+  "description": "Uma marca de café premium focada em origem, torra e experiência.",
+  "sections": [
+    {
+      "id": "story",
+      "type": "richText",
+      "title": "A nossa história",
+      "body": "Começámos no Porto com a missão de elevar a cultura de café com blends exclusivos e curadoria rigorosa."
+    },
+    {
+      "id": "values",
+      "type": "featureList",
+      "title": "No que acreditamos",
+      "items": ["Origem transparente", "Torra de precisão", "Experiência sensorial completa"]
+    },
+    {
+      "id": "contact",
+      "type": "cta",
+      "title": "Fale connosco",
+      "description": "Quer saber mais sobre os nossos cafés ou parcerias?",
+      "ctaLabel": "Entrar em contacto"
+    }
+  ]
+}

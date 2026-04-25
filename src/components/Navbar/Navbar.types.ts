@@ -1,5 +1,5 @@
-import { HomeCMSContent } from '../../cms/types';
+import { HeaderCMSContent } from '../../cms/types';
 
 export interface NavbarProps {
-  content: HomeCMSContent['header'];
+  content: HeaderCMSContent;
 }
