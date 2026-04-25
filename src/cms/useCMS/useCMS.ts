@@ -1,7 +1,8 @@
 import { useContext } from 'react';
-import { CMSContext, CMSContextValue } from './CMSContext';
+import { CMSContext } from '../CMSContext';
+import { UseCMSResult } from './useCMS.types';
 
-export const useCMS = (): CMSContextValue => {
+export const useCMS = (): UseCMSResult => {
   const context = useContext(CMSContext);
 
   if (!context) {
