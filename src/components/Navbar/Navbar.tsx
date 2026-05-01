@@ -11,6 +11,8 @@ const Navbar = ({ content }: NavbarProps) => {
   const navLinks = user ? content.navigation.filter((item) => item.path !== '/login') : content.navigation;
   const brand = content.brand;
   const logoutLabel = content.logoutLabel;
+  const authCtaClass =
+    'px-4 py-2 rounded-full border border-gold-500/50 bg-gold-500/10 text-gold-500 hover:bg-gold-500 hover:text-brown-900 transition';
 
   const handleLogout = () => {
     logout();
@@ -46,13 +48,15 @@ const Navbar = ({ content }: NavbarProps) => {
           </Link>
 
           {/* DESKTOP MENU */}
-          <nav className="hidden md:flex gap-10 text-sm tracking-wide text-text-secondary">
+          <nav className="hidden md:flex items-center justify-center gap-10 text-sm tracking-wide text-text-secondary">
             {navLinks.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `transition cursor-pointer ${isActive ? 'text-white' : 'hover:text-white'}`
+                  item.path === '/login'
+                    ? authCtaClass
+                    : `transition cursor-pointer ${isActive ? 'text-white' : 'hover:text-white'}`
                 }
               >
                 {item.label}
@@ -60,7 +64,7 @@ const Navbar = ({ content }: NavbarProps) => {
             ))}
 
             {user ? (
-              <button type="button" onClick={handleLogout} className="transition cursor-pointer hover:text-white">
+              <button type="button" onClick={handleLogout} className={`${authCtaClass} cursor-pointer`}>
                 {logoutLabel}
               </button>
             ) : null}
@@ -99,20 +103,25 @@ const Navbar = ({ content }: NavbarProps) => {
               exit={{ y: 40, opacity: 0 }}
               transition={{ duration: 0.4 }}
               className="
-                flex flex-col gap-10
+                flex flex-col items-center text-center gap-10
                 text-2xl
                 tracking-wide
               "
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               {navLinks.map((item) => (
-                <NavLink key={item.path} to={item.path} onClick={() => setOpen(false)}>
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setOpen(false)}
+                  className={item.path === '/login' ? authCtaClass : undefined}
+                >
                   {item.label}
                 </NavLink>
               ))}
 
               {user ? (
-                <button type="button" onClick={handleLogout} className="text-left">
+                <button type="button" onClick={handleLogout} className={authCtaClass}>
                   {logoutLabel}
                 </button>
               ) : null}
