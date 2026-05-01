@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCMSContent } from '../../cms';
@@ -12,7 +13,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async (e: React.ChangeEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await login({ email, password });
   };
@@ -33,39 +34,80 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen grid md:grid-cols-2 bg-(--color-bg-primary)">
-      {/* LEFT - Branding */}
-      <div className="hidden md:flex flex-col justify-center px-16 border-r border-border-soft">
-        <h1 className="text-5xl font-heading text-gold-400 mb-6">{content.brandingTitle}</h1>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className=" items-center hidden md:flex flex-col justify-center px-16 border-r border-border-soft"
+      >
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="w-full max-w-sm text-5xl font-heading text-gold-400 mb-6"
+        >
+          {content.brandingTitle}
+        </motion.h1>
 
-        <p className="text-text-secondary max-w-sm leading-relaxed">{content.brandingDescription}</p>
-      </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="text-text-secondary max-w-sm leading-relaxed"
+        >
+          {content.brandingDescription}
+        </motion.p>
+      </motion.div>
 
       {/* RIGHT - Form */}
-      <div className="flex items-center justify-center px-6">
-        <div className="w-full max-w-sm">
-          <h2 className="text-3xl font-heading mb-10">{content.title}</h2>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex items-center justify-center px-6"
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="w-full max-w-sm"
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-5xl font-heading mb-10 text-gold-400 "
+          >
+            {content.title}
+          </motion.h2>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <motion.form
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-6"
+          >
             <div>
-              <label className="text-xs text-text-muted">{content.emailLabel}</label>
+              <label>{content.emailLabel}</label>
               <input
                 type="email"
                 placeholder={content.emailPlaceholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-transparent border-b border-border-soft focus:border-gold-400 outline-none py-2 text-(--color-text-primary)"
+                className="w-full bg-transparent border-b border-border-soft focus:border-gold-400 outline-none py-2 text-text-secondary"
                 required
               />
             </div>
 
             <div>
-              <label className="text-xs text-text-muted">{content.passwordLabel}</label>
+              <label>{content.passwordLabel}</label>
               <input
                 type="password"
                 placeholder={content.passwordPlaceholder}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-transparent border-b border-border-soft focus:border-gold-400 outline-none py-2 text-(--color-text-primary)"
+                className="w-full bg-transparent border-b border-border-soft focus:border-gold-400 outline-none py-2 text-text-secondary"
                 required
               />
             </div>
@@ -74,14 +116,17 @@ export default function LoginPage() {
               <p className="text-sm text-velvet-300">{String(state.error || content.authErrorMessage)}</p>
             )}
 
-            <button
+            <motion.button
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.8 }}
               type="submit"
               disabled={state.status === RequestStatusType.LOADING}
               className="mt-6 bg-(--color-accent) hover:bg-(--color-accent-hover) transition text-white py-3 text-sm tracking-widest"
             >
               {state.status === RequestStatusType.LOADING ? content.loadingSubmitLabel : content.submitLabel}
-            </button>
-          </form>
+            </motion.button>
+          </motion.form>
 
           <p className="mt-8 text-xs text-text-muted">
             {content.noAccountText}{' '}
@@ -89,8 +134,8 @@ export default function LoginPage() {
               {content.createAccountText}
             </Link>
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
