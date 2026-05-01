@@ -1,8 +1,15 @@
 {
+  "brandingTitle": "Velvet",
+  "brandingDescription": "A ritual of taste, crafted for those who appreciate depth, aroma, and quiet luxury.",
   "title": "Entrar",
-  "emailPlaceholder": "Email",
-  "passwordPlaceholder": "Password",
+  "emailLabel": "Email",
+  "emailPlaceholder": "Insira o seu email",
+  "passwordLabel": "Password",
+  "passwordPlaceholder": "Insira a sua password",
   "submitLabel": "Entrar",
+  "loadingSubmitLabel": "A entrar...",
+  "loadErrorMessage": "Erro ao carregar conteúdo",
+  "authErrorMessage": "Erro ao autenticar",
   "noAccountText": "Não tens conta?",
   "createAccountText": "Criar conta"
 }

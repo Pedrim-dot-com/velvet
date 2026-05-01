@@ -5,19 +5,19 @@ import { LoginCMSContent } from '../../cms/types';
 import useAuth from '../../features/auth';
 import { RequestStatusType } from '../../types';
 
-export default function Login() {
-  const { login } = useAuth();
+export default function LoginPage() {
+  const { login, state } = useAuth();
   const loginCMS = useCMSContent<LoginCMSContent>('login.json');
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.ChangeEvent) => {
     e.preventDefault();
     await login({ email, password });
   };
 
-  if (loginCMS.status === RequestStatusType.LOADING || loginCMS.status === RequestStatusType.IDLE) {
+  if (loginCMS.status === RequestStatusType.IDLE || loginCMS.status === RequestStatusType.LOADING) {
     return null;
   }
 
@@ -29,41 +29,67 @@ export default function Login() {
     );
   }
 
+  const content = loginCMS.data;
+
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="w-full max-w-md">
-        <h1 className="text-2xl font-semibold mb-6">{loginCMS.data.title}</h1>
+    <div className="min-h-screen grid md:grid-cols-2 bg-(--color-bg-primary)">
+      {/* LEFT - Branding */}
+      <div className="hidden md:flex flex-col justify-center px-16 border-r border-border-soft">
+        <h1 className="text-5xl font-heading text-gold-400 mb-6">{content.brandingTitle}</h1>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <input
-            type="email"
-            placeholder={loginCMS.data.emailPlaceholder}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="border p-3 rounded"
-            required
-          />
+        <p className="text-text-secondary max-w-sm leading-relaxed">{content.brandingDescription}</p>
+      </div>
 
-          <input
-            type="password"
-            placeholder={loginCMS.data.passwordPlaceholder}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="border p-3 rounded"
-            required
-          />
+      {/* RIGHT - Form */}
+      <div className="flex items-center justify-center px-6">
+        <div className="w-full max-w-sm">
+          <h2 className="text-3xl font-heading mb-10">{content.title}</h2>
 
-          <button type="submit" className="bg-black text-white p-3 rounded">
-            {loginCMS.data.submitLabel}
-          </button>
-        </form>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <div>
+              <label className="text-xs text-text-muted">{content.emailLabel}</label>
+              <input
+                type="email"
+                placeholder={content.emailPlaceholder}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-transparent border-b border-border-soft focus:border-gold-400 outline-none py-2 text-(--color-text-primary)"
+                required
+              />
+            </div>
 
-        <p className="mt-4 text-sm">
-          {loginCMS.data.noAccountText}
-          <Link to="/signup" className="underline">
-            {loginCMS.data.createAccountText}
-          </Link>
-        </p>
+            <div>
+              <label className="text-xs text-text-muted">{content.passwordLabel}</label>
+              <input
+                type="password"
+                placeholder={content.passwordPlaceholder}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full bg-transparent border-b border-border-soft focus:border-gold-400 outline-none py-2 text-(--color-text-primary)"
+                required
+              />
+            </div>
+
+            {state.status === RequestStatusType.ERROR && (
+              <p className="text-sm text-velvet-300">{String(state.error || content.authErrorMessage)}</p>
+            )}
+
+            <button
+              type="submit"
+              disabled={state.status === RequestStatusType.LOADING}
+              className="mt-6 bg-(--color-accent) hover:bg-(--color-accent-hover) transition text-white py-3 text-sm tracking-widest"
+            >
+              {state.status === RequestStatusType.LOADING ? content.loadingSubmitLabel : content.submitLabel}
+            </button>
+          </form>
+
+          <p className="mt-8 text-xs text-text-muted">
+            {content.noAccountText}{' '}
+            <Link to="/signup" className="underline text-gold-400">
+              {content.createAccountText}
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
