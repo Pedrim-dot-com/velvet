@@ -89,10 +89,17 @@ collections:
         label: 'Login Page'
         name: 'login'
         fields:
+          - { label: 'Branding Title', name: 'brandingTitle', widget: 'string' }
+          - { label: 'Branding Description', name: 'brandingDescription', widget: 'text' }
           - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Email Label', name: 'emailLabel', widget: 'string' }
           - { label: 'Email Placeholder', name: 'emailPlaceholder', widget: 'string' }
+          - { label: 'Password Label', name: 'passwordLabel', widget: 'string' }
           - { label: 'Password Placeholder', name: 'passwordPlaceholder', widget: 'string' }
           - { label: 'Submit Label', name: 'submitLabel', widget: 'string' }
+          - { label: 'Loading Submit Label', name: 'loadingSubmitLabel', widget: 'string' }
+          - { label: 'Load Error Message', name: 'loadErrorMessage', widget: 'string' }
+          - { label: 'Auth Error Message', name: 'authErrorMessage', widget: 'string' }
           - { label: 'No Account Text', name: 'noAccountText', widget: 'string' }
           - { label: 'Create Account Text', name: 'createAccountText', widget: 'string' }
 

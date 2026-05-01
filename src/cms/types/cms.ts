@@ -51,10 +51,17 @@ export interface HomeCMSContent {
 }
 
 export interface LoginCMSContent {
+  brandingTitle: string;
+  brandingDescription: string;
   title: string;
+  emailLabel: string;
   emailPlaceholder: string;
+  passwordLabel: string;
   passwordPlaceholder: string;
   submitLabel: string;
+  loadingSubmitLabel: string;
+  loadErrorMessage: string;
+  authErrorMessage: string;
   noAccountText: string;
   createAccountText: string;
 }
