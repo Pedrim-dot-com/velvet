@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
-import { RequestStatusType, useCMSContent } from '../cms';
+import { useCMSContent } from '../cms';
 import { LayoutCMSContent } from '../cms/types';
 import { Footer, Navbar } from '../components';
+import { RequestStatusType } from '../types';
 
 interface LayoutProps {
   children?: ReactNode;

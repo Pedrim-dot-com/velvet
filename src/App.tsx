@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './layout';
 import Cart from './pages/Cart';
 import Home from './pages/Home';
+import Login from './pages/Login/Login';
 import { PageRoute } from './pages/Page';
 import Shop from './pages/Shop';
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/pages/:slug" element={<PageRoute />} />
+          <Route path="/login" element={<Login />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

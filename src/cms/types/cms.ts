@@ -11,6 +11,7 @@ export type FooterLinks = {
 export interface HeaderCMSContent {
   brand: string;
   navigation: NavigationLinkCMS[];
+  logoutLabel: string;
 }
 
 export interface HeroCMSContent {
@@ -47,6 +48,15 @@ export interface LayoutCMSContent {
 
 export interface HomeCMSContent {
   hero: HeroCMSContent;
+}
+
+export interface LoginCMSContent {
+  title: string;
+  emailPlaceholder: string;
+  passwordPlaceholder: string;
+  submitLabel: string;
+  noAccountText: string;
+  createAccountText: string;
 }
 
 export interface PageRichTextSection {

@@ -1,6 +1,7 @@
 {
   "header": {
     "brand": "VELVET CAFÉS",
+    "logoutLabel": "Sair",
     "navigation": [
       {
         "label": "Início",
@@ -13,6 +14,10 @@
       {
         "label": "Sobre",
         "path": "/pages/about"
+      },
+      {
+        "label": "Entrar",
+        "path": "/login"
       }
     ]
   },
@@ -35,6 +40,10 @@
         {
           "label": "Sobre",
           "path": "/pages/about"
+        },
+        {
+          "label": "Entrar",
+          "path": "/login"
         }
       ]
     },
