@@ -1,12 +1,22 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import useAuth from '../../features/auth';
 import type { NavbarProps } from './Navbar.types';
 
 const Navbar = ({ content }: NavbarProps) => {
   const [open, setOpen] = useState(false);
-  const navLinks = content.navigation;
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
+  const navLinks = user ? content.navigation.filter((item) => item.path !== '/login') : content.navigation;
   const brand = content.brand;
+  const logoutLabel = content.logoutLabel;
+
+  const handleLogout = () => {
+    logout();
+    setOpen(false);
+    navigate('/');
+  };
 
   return (
     <>
@@ -48,6 +58,12 @@ const Navbar = ({ content }: NavbarProps) => {
                 {item.label}
               </NavLink>
             ))}
+
+            {user ? (
+              <button type="button" onClick={handleLogout} className="transition cursor-pointer hover:text-white">
+                {logoutLabel}
+              </button>
+            ) : null}
           </nav>
 
           {/* MOBILE BUTTON */}
@@ -94,6 +110,12 @@ const Navbar = ({ content }: NavbarProps) => {
                   {item.label}
                 </NavLink>
               ))}
+
+              {user ? (
+                <button type="button" onClick={handleLogout} className="text-left">
+                  {logoutLabel}
+                </button>
+              ) : null}
             </motion.nav>
           </motion.div>
         )}

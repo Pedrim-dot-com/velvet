@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
+import { RequestState, RequestStatusType } from '../../types';
 import { useCMS } from '../useCMS';
-import { CMSRequestState, RequestStatusType } from './useCMSContent.types';
 
-export const useCMSContent = <T>(path: string): CMSRequestState<T> => {
+export const useCMSContent = <T>(path: string): RequestState<T> => {
   const { getContent } = useCMS();
 
-  const [content, setContent] = useState<CMSRequestState<T>>({
+  const [content, setContent] = useState<RequestState<T>>({
     status: RequestStatusType.IDLE
   });
 

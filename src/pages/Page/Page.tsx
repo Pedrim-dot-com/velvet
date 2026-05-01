@@ -1,5 +1,6 @@
-import { RequestStatusType, useCMSContent } from '../../cms';
+import { useCMSContent } from '../../cms';
 import { PageCMSContent, PageSection } from '../../cms/types';
+import { RequestStatusType } from '../../types';
 import { PageProps } from './Page.types';
 
 const renderSection = (section: PageSection) => {

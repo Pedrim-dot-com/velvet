@@ -7,7 +7,7 @@ export const RequestStatusType = {
 
 export type RequestStatusMap = typeof RequestStatusType;
 
-export type CMSRequestState<T> =
+export type RequestState<T> =
   | { status: RequestStatusMap['IDLE'] }
   | { status: RequestStatusMap['LOADING'] }
   | { status: RequestStatusMap['SUCCESS']; data: T }

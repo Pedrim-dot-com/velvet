@@ -18,6 +18,7 @@ collections:
             widget: 'object'
             fields:
               - { label: 'Brand', name: 'brand', widget: 'string' }
+              - { label: 'Logout Label', name: 'logoutLabel', widget: 'string' }
               - label: 'Navigation'
                 name: 'navigation'
                 widget: 'list'
@@ -80,6 +81,20 @@ collections:
               - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'Description', name: 'description', widget: 'text' }
               - { label: 'CTA', name: 'cta', widget: 'string' }
+
+  - name: 'login'
+    label: 'Login'
+    files:
+      - file: 'public/content/login.json'
+        label: 'Login Page'
+        name: 'login'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Email Placeholder', name: 'emailPlaceholder', widget: 'string' }
+          - { label: 'Password Placeholder', name: 'passwordPlaceholder', widget: 'string' }
+          - { label: 'Submit Label', name: 'submitLabel', widget: 'string' }
+          - { label: 'No Account Text', name: 'noAccountText', widget: 'string' }
+          - { label: 'Create Account Text', name: 'createAccountText', widget: 'string' }
 
   - name: 'pages'
     label: 'Pages'
