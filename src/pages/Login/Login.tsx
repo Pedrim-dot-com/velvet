@@ -122,7 +122,7 @@ export default function LoginPage() {
               transition={{ delay: 0.8 }}
               type="submit"
               disabled={state.status === RequestStatusType.LOADING}
-              className="mt-6 bg-(--color-accent) hover:bg-(--color-accent-hover) transition text-white py-3 text-sm tracking-widest"
+              className="mt-6 bg-(--color-accent) hover:bg-(--color-accent-hover) transition text-white py-3 text-sm tracking-widest cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
             >
               {state.status === RequestStatusType.LOADING ? content.loadingSubmitLabel : content.submitLabel}
             </motion.button>
